@@ -1,34 +1,21 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import Heading from "./Heading"
+import Time from "./Timeline"
 import './App.css'
 
-function App() {
-  const [count, setCount] = useState(0)
-
+const App = () => {
+ 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <div>
+     <Heading/>
+      <Time year= {2006} event="I was born" />
+      <Time year= {2010} event="I started going to school." />
+      <Time year= {2017} event="When i was in 7th class,I fell in a running competition in school since then i stoped running because i got a head injury." />
+      <Time year= {2019} event="I playing with my friends a stick got stick in my eye and i felt little pain, but i did not tell my family, and my vision gradually stopped then i told my family and i got treatmant continued for about 6 months and my eye become fine." />
+      <Time year= {2021} event="Lockdown was imposed when i was in 11th class so i did not study, and that year almost all the student passed." />
+      <Time year= {2022} event="I was in 12th class even then i could not study properly." />
+      <Time year= {2023} event=" I went to Himachal Pradesh to study " />
+    </div>
+
   )
 }
 
