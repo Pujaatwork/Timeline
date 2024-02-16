@@ -1,21 +1,52 @@
-import Heading from "./Heading"
 import Time from "./Timeline"
+import { useState } from "react"
 import './App.css'
+import { useEffect } from "react";
+function App() {
+  const [data, setData] = useState([]);
+  const [year, setYear] = useState("")
+  const [event, setEvent] = useState('')
 
-const App = () => {
- 
+
+  // used get request 
+  useEffect(() => {
+    fetch("http://localhost:3001/event")
+      .then((response) => response.json())
+      .then((data) => {
+        setData(data);
+      })
+  }, [])
+
+
+  const handleClick = () => {
+    let newObj = {}
+    newObj.year = year
+    newObj.event = event
+    setData([...data, newObj])
+    setYear('')
+    setEvent('')
+
+    //used post request
+    fetch("http://localhost:3001/event",{
+      method: "post",
+      body: JSON.stringify({year,event})
+    })
+
+  }
   return (
-    <div>
-     <Heading/>
-      <Time year= {2006} event="I was born" />
-      <Time year= {2010} event="I started going to school." />
-      <Time year= {2017} event="When i was in 7th class,I fell in a running competition in school since then i stoped running because i got a head injury." />
-      <Time year= {2019} event="I playing with my friends a stick got stick in my eye and i felt little pain, but i did not tell my family, and my vision gradually stopped then i told my family and i got treatmant continued for about 6 months and my eye become fine." />
-      <Time year= {2021} event="Lockdown was imposed when i was in 11th class so i did not study, and that year almost all the student passed." />
-      <Time year= {2022} event="I was in 12th class even then i could not study properly." />
-      <Time year= {2023} event=" I went to Himachal Pradesh to study " />
+    <div className="container">
+      <h1>Welcome to My Time-Line </h1>
+      <br />
+      {data.map(event => {
+        return (<Time key={event.year} year={event.year} event={event.event} />)
+      })}
+      <input value={year} type='number' onChange={e => setYear(e.target.value)} />
+      <br />
+      <br />
+      <input value={event} type='text' onChange={e => setEvent(e.target.value)} />
+      <br />
+      <button onClick={handleClick}>Sumbit</button>
     </div>
-
   )
 }
 

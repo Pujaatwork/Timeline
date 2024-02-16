@@ -1,0 +1,44 @@
+{
+  "event": [
+    {
+      "id": "1",
+      "year": 2006,
+      "event": "I was born"
+    },
+    {
+      "id": "2",
+      "year": 20011,
+      "event": "I want to shcool"
+    },
+    {
+      "id": "3",
+      "year": 2021,
+      "event": "i passed 10th"
+    },
+    {
+      "id": "4",
+      "year": 2022,
+      "event": "I passed 12th"
+    },
+    {
+      "id": "5",
+      "year": 2023,
+      "event": "I came to himachal pradesh"
+    },
+    {
+      "id": "6fbf",
+      "year": "354656879",
+      "event": "kjhgfdds"
+    },
+    {
+      "id": "c2b5",
+      "year": "764534231",
+      "event": "jhghdfgfdsda"
+    },
+    {
+      "id": "da41",
+      "year": "7805806077",
+      "event": "shivani yadav"
+    }
+  ]
+}
