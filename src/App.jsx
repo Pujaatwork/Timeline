@@ -27,9 +27,9 @@ function App() {
     setEvent('')
 
     //used post request
-    fetch("http://localhost:3001/event",{
+    fetch("http://localhost:3001/event", {
       method: "post",
-      body: JSON.stringify({year,event})
+      body: JSON.stringify({ year, event })
     })
 
   }
@@ -40,9 +40,10 @@ function App() {
       {data.map(event => {
         return (<Time key={event.year} year={event.year} event={event.event} />)
       })}
+      <label htmlFor="Years"></label>
       <input value={year} type='number' onChange={e => setYear(e.target.value)} />
-      <br />
-      <br />
+      
+      <label htmlFor="Events"></label>
       <input value={event} type='text' onChange={e => setEvent(e.target.value)} />
       <br />
       <button onClick={handleClick}>Sumbit</button>
